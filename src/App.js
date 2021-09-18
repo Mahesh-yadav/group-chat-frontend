@@ -1,10 +1,13 @@
 import AppRouter from './Router/AppRouter';
 import './App.css';
+import { useUser } from './components/auth/useUser';
 
 function App() {
+  const { isLoading, user } = useUser();
+
   return (
     <div>
-      <AppRouter />
+      <AppRouter isLoading={isLoading} user={user} />
     </div>
   );
 }

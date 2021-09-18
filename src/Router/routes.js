@@ -1,29 +1,31 @@
-import SignInPage from "../pages/SignInPage";
-import GroupPage from "../pages/GroupPage";
-import GroupsListPage from "../pages/GroupsListPage";
-import AddGroupPage from "../pages/AddGroupPage";
+import SignInPage from '../pages/SignInPage';
+import GroupPage from '../pages/GroupPage';
+import GroupsListPage from '../pages/GroupsListPage';
+import AddGroupPage from '../pages/AddGroupPage';
 
 export const routes = [
   {
     path: '/',
     Component: GroupsListPage,
-    exact : true
+    private: true,
+    exact: true,
   },
   {
     path: '/groups/:id',
     Component: GroupPage,
-    exact : true
+    private: true,
+    exact: true,
   },
   {
     path: '/sign-in',
     Component: SignInPage,
-    exact : true
+    private: false,
+    exact: true,
   },
   {
     path: '/add-group',
     Component: AddGroupPage,
-    exact : true
+    private: true,
+    exact: true,
   },
 ];
-
-

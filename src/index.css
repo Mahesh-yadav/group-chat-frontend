@@ -37,7 +37,8 @@ a {
   text-decoration: none;
 }
 
-input, select {
+input,
+select {
   border: 2px solid #ddd;
   border-radius: 8px;
   box-sizing: border-box;
@@ -116,4 +117,23 @@ input, select {
 
 .space-after {
   margin-bottom: 16px;
+}
+
+.icon-loading {
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-container {
+  color: orangered;
+  font-size: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
