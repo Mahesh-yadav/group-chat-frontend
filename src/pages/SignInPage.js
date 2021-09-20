@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import Spinner from '../components/UI/Spinner';
 
 export default function SignInPage() {
   const [email, setEmail] = useState('');

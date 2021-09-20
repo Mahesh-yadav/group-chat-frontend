@@ -1,7 +1,7 @@
 import SignInPage from '../pages/SignInPage';
 import GroupPage from '../pages/GroupPage';
 import GroupsListPage from '../pages/GroupsListPage';
-import AddGroupPage from '../pages/AddGroupPage';
+import CreateGroupPage from '../pages/CreateGroupPage';
 
 export const routes = [
   {
@@ -23,8 +23,8 @@ export const routes = [
     exact: true,
   },
   {
-    path: '/add-group',
-    Component: AddGroupPage,
+    path: '/create-group',
+    Component: CreateGroupPage,
     private: true,
     exact: true,
   },

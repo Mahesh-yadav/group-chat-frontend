@@ -137,3 +137,14 @@ select {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.group-link {
+  color: rgb(48, 185, 185);
+}
+
+.request-submitted {
+  background: green;
+  padding: 7px 10px;
+  color: white;
+  border-radius: 5px;
+}
