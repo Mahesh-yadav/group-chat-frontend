@@ -36,7 +36,7 @@ export default function GroupsListPage() {
         submittedGroupRequests={userGroupRequests}
       />
       <Link to="/create-group">
-        <button className="space-before space-after">Create New Group</button>
+        <button className="space-before space-after">Create Group</button>
       </Link>
     </div>
   );
