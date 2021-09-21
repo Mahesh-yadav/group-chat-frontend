@@ -1,44 +1,51 @@
 import { useState, useEffect } from 'react';
 import { getAuth } from 'firebase/auth';
 
-export const useUserGroups = () => {
+const defaultValue = {
+  owner: {},
+  messages: [],
+  requests: [],
+};
+
+export const useGroup = (url) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [userGroups, setUserGroups] = useState([]);
+  const [group, setGroup] = useState(defaultValue);
 
   useEffect(() => {
-    async function loadGroups() {
+    async function loadData() {
       const auth = getAuth();
       const user = auth.currentUser;
 
       if (!user) {
-        setUserGroups([]);
+        setGroup(defaultValue);
         setIsLoading(false);
         return;
       }
 
       try {
         setIsLoading(true);
-        const response = await fetch(`/users/${user.uid}/groups`, {
+        const response = await fetch(url, {
           headers: {
             AuthToken: await user.getIdToken(),
           },
         });
+
         if (response.ok) {
           const data = await response.json();
           setIsLoading(false);
-          setUserGroups(data);
+          setGroup(data);
         } else {
           throw new Error('Unable to fetch data');
         }
       } catch (error) {
         console.log(error);
         setIsLoading(false);
-        setUserGroups([]);
+        setGroup(defaultValue);
       }
     }
 
-    loadGroups();
-  }, []);
+    loadData();
+  }, [url]);
 
-  return { isLoading, userGroups };
+  return { isLoading, group, setGroup };
 };

@@ -17,6 +17,7 @@ export const useUserRequests = () => {
       }
 
       try {
+        setIsLoading(true);
         const response = await fetch(`/users/${user.uid}/requests`, {
           headers: {
             AuthToken: await user.getIdToken(),

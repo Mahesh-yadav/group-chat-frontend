@@ -90,14 +90,16 @@ select {
 .new-message-form {
   padding: 16px 0;
   display: flex;
+  flex-direction: column;
 }
 
 .new-message-form input {
-  flex: 8;
+  flex: 1;
 }
 
 .new-message-form button {
-  flex: 1;
+  align-self: flex-end;
+  width: 40%;
 }
 
 .error-message {
@@ -147,4 +149,24 @@ select {
   padding: 7px 10px;
   color: white;
   border-radius: 5px;
+}
+
+.request-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.request-item h3 {
+  margin: 0;
+}
+
+.request-item button {
+  padding: 8px 20px;
+}
+
+.request-item .btn-reject {
+  margin-left: 15px;
+  background-color: red;
 }
